@@ -3,13 +3,15 @@
 #include "Tokenizer.h"
 #include "Parser.h"
 #include <Qstring>
-
+#include <QDebug>
+#include<iostream>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+   // this->setWindowFlag(Qt::WindowType::FramelessWindowHint);
 
 }
 
@@ -205,4 +207,24 @@ void MainWindow::on_pushBtn_Enter_clicked()
         ui->Line_Output->setText(result);
     }
 }
+
+/*
+    Get the current position of the mouse when pressed
+*/
+void MainWindow::mousePressEvent(QMouseEvent *event)
+{
+    this->currentPos = event->globalPosition().toPoint();
+    qDebug()  << this->currentPos.x() << this->currentPos.y();
+}
+
+void MainWindow::mouseMoveEvent(QMouseEvent *event)
+{
+    this->newPos = event->globalPosition().toPoint() - this->currentPos;
+    qDebug()  << this->newPos.x() << this->newPos.y();
+    move(this->pos().x() + this->newPos.x(), this->pos().y() + this->newPos.y());
+    // Rest the current position back to the mouse
+    this->currentPos = event->globalPosition().toPoint();
+
+}
+
 

@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMouseEvent>
+#include <QPoint>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -58,7 +60,13 @@ private slots:
 
     void on_pushBtn_Enter_clicked();
 
+    void mousePressEvent(QMouseEvent *event);
+
+    void mouseMoveEvent(QMouseEvent *event);
+
 private:
     Ui::MainWindow *ui;
+    QPoint currentPos;
+    QPoint newPos;
 };
 #endif // MAINWINDOW_H
