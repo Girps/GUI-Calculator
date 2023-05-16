@@ -52,7 +52,8 @@
    <string>MainWindow</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="accessories-calculator"/>
+   <iconset theme="accessories-calculator">
+    <normaloff>.</normaloff>.</iconset>
   </property>
   <property name="windowOpacity">
    <double>0.900000000000000</double>
@@ -61,7 +62,7 @@
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -80,6 +81,14 @@
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
          </property>
          <property name="readOnly">
           <bool>true</bool>
