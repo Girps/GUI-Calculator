@@ -3,6 +3,9 @@ Calculator application evaluates arthmetic expression using PEMDAS rules.
 The application evaluates expressions through recursive function calls corresponding
 to the following grammar rules. 
 
+![Calculator](https://github.com/Girps/GUI-Calculator/assets/105522853/12761202-6414-4f2c-a4a5-0796d19c64af)
+
+
 # Grammar Rules 
 
 math -> exp @ 
