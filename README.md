@@ -104,7 +104,7 @@ Each character is evaluated to match a potenetial token in the Tokenizer.cpp fil
 Strings made up of these characters are tokenized when validated with regular expressions and added 
 to the stack otherwise an exeception is thrown. When the expressions has been 
 analyzied by the lexer a stack of tokens is created and used to pass on the Parser
-obect for syntax anaylsis. 
+object for syntax anaylsis. 
 
 # Run exe 
 
