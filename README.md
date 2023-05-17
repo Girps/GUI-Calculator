@@ -52,7 +52,46 @@ NUMBER
 LEFTPAREN
 RIGHTPAREN
 EXPONENT
-# 
+
+
+# First sets of the grammar
+Returned from GetFirstSets:
+
+FIRST(math) = { LEFTPAREN, MINUS, NUMBER  }
+
+FIRST(exp) = { LEFTPAREN, MINUS, NUMBER  }
+
+FIRST(exp2) = { EPSILON, MINUS, PLUS  }
+
+FIRST(term) = { LEFTPAREN, MINUS, NUMBER  }
+
+FIRST(term2) = { DIV, EPSILON, LEFTPAREN, MULT  }
+
+FIRST(primary) = { LEFTPAREN, MINUS, NUMBER  }
+
+FIRST(primary2) = { EPSILON, EXPONENT  }
+
+FIRST(factor) = { LEFTPAREN, MINUS, NUMBER  }
+
+
+# Follow sets of the grammar
+FOLLOW(math) = { $ }
+
+FOLLOW(exp) = { $, RIGHTPAREN }
+
+FOLLOW(exp2) = { $, RIGHTPAREN }
+
+FOLLOW(term) = { $, MINUS, PLUS, RIGHTPAREN }
+
+FOLLOW(term2) = { $, MINUS, PLUS, RIGHTPAREN }
+
+FOLLOW(primary) = { $, DIV, EXPONENT, LEFTPAREN, MINUS, MULT, PLUS, RIGHTPAREN }
+
+FOLLOW(primary2) = { $, DIV, EXPONENT, LEFTPAREN, MINUS, MULT, PLUS, RIGHTPAREN }
+
+FOLLOW(factor) = { $, DIV, EXPONENT, LEFTPAREN, MINUS, MULT, PLUS, RIGHTPAREN }
+
+#
 
 The given grammmar is a context free grammar and rules are determined using a
 predictive recursive descent parser. Each function is called corresponds to a rule
@@ -66,3 +105,7 @@ Strings made up of these characters are tokenized with regular expressions and a
 ed to the stack otherwise an exeception is thrown. When the expressions has been 
 analyzied by the lexer a stack is tokens is created and used to pass on the Parser
 obect for syntax anaylsis. 
+
+# Run exe 
+
+Extract zip file from https://github.com/Girps/GUI-Calculator/releases and click the Calculator.exe file. 
