@@ -8,8 +8,8 @@
 #include <sstream> 
 #include <regex>
 
-#define DOUBLE_EX "([0-9]\.[0-9]+)|([1-9]+\.[0-9]+)"	// For double representation 
-#define INT_EXP		"([0-9]|[1-9]+)"					// Integer representation 
+#define DOUBLE_EX "([0-9][.][0-9]+)|([1-9]+[0-9]*[.][0-9]+)"	// For double representation
+#define INT_EXP		"([0-9]|[1-9]+[0-9]*)"					// Integer representation
 #define PLUS_EX	"+"
 #define	MINUS_EX "-"
 #define MULT_EX "*"

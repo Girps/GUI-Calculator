@@ -94,7 +94,7 @@ void Tokenizer::num_Tokenizer(std::string::iterator& it)
 				break;
 			default:		// default will check if it matches any of our REGEX if not throw error
 				
-				if (std::regex_search(temp, int_Reg))
+                if (std::regex_match(temp, int_Reg))
 				{
 					this->Tokens_Stack.push(Token(DOUBLE, std::stod(temp)));
 					this->Tokens_List.push_back(Token(DOUBLE, std::stod(temp)));
@@ -102,7 +102,7 @@ void Tokenizer::num_Tokenizer(std::string::iterator& it)
 					--it; 
 					return;
 				}
-				else if (std::regex_search(temp, dol_Reg))
+                else if (std::regex_match(temp, dol_Reg))
 				{
 					this->Tokens_Stack.push(Token(DOUBLE, std::stod(temp)));
 					this->Tokens_List.push_back(Token(DOUBLE, std::stod(temp)));
@@ -119,7 +119,7 @@ void Tokenizer::num_Tokenizer(std::string::iterator& it)
 	}
 
 	// Reached end of the character array case now check if it is valid
-	if (std::regex_search(temp, int_Reg))
+    if (std::regex_match(temp, int_Reg))
 	{
 		this->Tokens_Stack.push(Token(DOUBLE, std::stod(temp)));
 		this->Tokens_List.push_back(Token(DOUBLE, std::stod(temp)));
@@ -127,7 +127,7 @@ void Tokenizer::num_Tokenizer(std::string::iterator& it)
 		--it; 
 		return;
 	}
-	else if (std::regex_search(temp, dol_Reg))
+    else if (std::regex_match(temp, dol_Reg))
 	{
 		this->Tokens_Stack.push(Token(DOUBLE, std::stod(temp)));
 		this->Tokens_List.push_back(Token(DOUBLE, std::stod(temp)));
